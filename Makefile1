@@ -1,0 +1,14 @@
+vpath %.h ../src
+vpath %.cpp ../yuan
+
+test:main.o hello.o
+	g++ -o test main.o hello.o
+
+main.o:hello.h
+
+hello.o:hello.h
+
+.PHONY:clean
+
+clean:
+	-rm test *.o
